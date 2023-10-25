@@ -13,13 +13,13 @@ const segnaposto = []
 
 
 invitati.forEach((el, index) => {
-    const segnapostoPattern = [
+    const segnapostoPattern = 
         {
             tableName: "Tavolo Vip",
             guestName: el,
             place: (index + 1),
         }
-    ]
+    
     segnaposto.push(segnapostoPattern);
 })
 console.log(segnaposto);
