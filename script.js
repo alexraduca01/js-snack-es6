@@ -87,3 +87,43 @@ const superior120 = students.filter((studente) => {
 })
 
 console.log(superior120);
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // SNACK 3 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Creare un array di oggetti:
+// Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+// Stampare in console la bici con peso minore utilizzando destructuring e template literal
+
+const depositoBici = [
+    {
+        nome: "mountain bike",
+        peso: 8,
+    },
+    {
+        nome: "bmx",
+        peso: 5,
+    },
+    {
+        nome: "bici ibrida",
+        peso: 10,
+    },
+    {
+        nome: "gravel bike",
+        peso: 12,
+    },
+    {
+        nome: "fat bike",
+        peso: 50,
+    },
+];
+
+let minor = []
+
+depositoBici.forEach((el, index) => {
+    const {peso} = depositoBici[index];
+    minor.push(peso);
+})
+
+const result = depositoBici.filter((bici) => {
+    return bici.nome && bici.peso === Math.min(...minor);
+})
+console.log(`la bici che pesa meno è: ${result[0].nome} e pesa: ${result[0].peso}kg`);
