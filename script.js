@@ -130,7 +130,7 @@ console.log(`la bici che pesa meno è: ${result[0].nome} e pesa: ${result[0].pes
 
 document.body.innerHTML = 
 `
-    <div>
+    <div class="my-3 text-center fs-3 text-warning">
     la bici che pesa meno è: ${result[0].nome} e pesa: ${result[0].peso}kg
     </div>
 `;
@@ -186,7 +186,7 @@ function print(copySerieA, {nome, falliSubiti}){
     document.body.append(testo);
     testo.innerHTML = 
     `
-        <p> nome: ${copySerieA.nome} / punti: ${copySerieA.punti} / falli subiti: ${copySerieA.falliSubiti}</p>
-        <p> nome: ${{nome, falliSubiti}.nome} / falli subiti: ${{nome, falliSubiti}.falliSubiti}</p>
+        <p class="my-3 text-center fs-3 text-warning"> nome: ${copySerieA.nome} / punti: ${copySerieA.punti} / falli subiti: ${copySerieA.falliSubiti}</p>
+        <p class="my-3 text-center fs-3 text-warning"> nome: ${{nome, falliSubiti}.nome} / falli subiti: ${{nome, falliSubiti}.falliSubiti}</p>
     `
 };
