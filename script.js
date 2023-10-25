@@ -9,7 +9,7 @@
 // Generiamo e stampiamo in console la lista per i segnaposto.
 
 const invitati = ['Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'];
-const segnaposto = []
+const segnaposto = [];
 
 
 invitati.forEach((el, index) => {
@@ -21,7 +21,7 @@ invitati.forEach((el, index) => {
         }
     
     segnaposto.push(segnapostoPattern);
-})
+});
 console.log(segnaposto);
 
 
@@ -72,19 +72,19 @@ const students = [
 
 const aula = students.map((studente) => {
     return studente.name.toUpperCase();
-})
+});
 
 console.log(aula);
 
 const over70 = students.filter((studente) => {
     return studente.grades > 70;
-})
+});
 
 console.log(over70);
 
 const superior120 = students.filter((studente) => {
     return studente.grades > 70 && studente.id > 120;
-})
+});
 
 console.log(superior120);
 
@@ -116,17 +116,24 @@ const depositoBici = [
     },
 ];
 
-let minor = []
+let minor = [];
 
 depositoBici.forEach((el, index) => {
     const {peso} = depositoBici[index];
     minor.push(peso);
-})
+});
 
 const result = depositoBici.filter((bici) => {
     return bici.nome && bici.peso === Math.min(...minor);
-})
+});
 console.log(`la bici che pesa meno è: ${result[0].nome} e pesa: ${result[0].peso}kg`);
+
+document.body.innerHTML = 
+`
+    <div>
+    la bici che pesa meno è: ${result[0].nome} e pesa: ${result[0].peso}kg
+    </div>
+`;
 
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // SNACK 4 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
@@ -136,7 +143,7 @@ console.log(`la bici che pesa meno è: ${result[0].nome} e pesa: ${result[0].pes
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
+};
 
 const serieA = [
     {
@@ -171,4 +178,15 @@ serieA.forEach((el, index) =>{
     console.log(copySerieA);
     const {nome, falliSubiti} = copySerieA;
     console.log({nome, falliSubiti});
-})
+    print(copySerieA, {nome, falliSubiti});
+});
+
+function print(copySerieA, {nome, falliSubiti}){
+    const testo = document.createElement('div');
+    document.body.append(testo);
+    testo.innerHTML = 
+    `
+        <p> nome: ${copySerieA.nome} / punti: ${copySerieA.punti} / falli subiti: ${copySerieA.falliSubiti}</p>
+        <p> nome: ${{nome, falliSubiti}.nome} / falli subiti: ${{nome, falliSubiti}.falliSubiti}</p>
+    `
+};
